@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>登录 - 双微教研院工作平台</title>
+  <!-- 桌面端样式 -->
+  <link rel="stylesheet" href="/login/style.css">
+
+  <!-- 移动端样式 -->
+  <link rel="stylesheet" href="/login/style-mobile.css" media="screen and (max-width: 1024px)">
+
+  <link rel="icon" href="/assets/Resources/logo.ico" type="image/x-icon" />
+</head>
+<body>
+  <div class="login-container">
+    <div class="login-card">
+      <div class="login-logo">
+        <img src="/login/assets/Resources/logo.svg" alt="双微教研院工作平台Logo" />
+      </div>
+
+      <h2 class="login-title" id="loginTitle">欢迎回来</h2>
+
+      <form id="loginForm" class="login-form">
+        <div id="inputGroup">
+          <input type="text" id="username" placeholder="账号" required />
+        </div>
+        <p class="login-hint">仅限授权用户访问</p>
+
+        <input type="hidden" id="csrfToken" name="_csrf" value="">
+        <button type="submit" id="loginButton">下一步</button>
+      </form>
+
+    </div>
+  </div>
+
+  <!-- 自定义弹窗 -->
+  <div id="popup" class="popup hidden">
+    <div class="popup-content">
+      <p id="popup-message"></p>
+      <button id="popup-ok">确定</button>
+    </div>
+  </div>
+
+  <script src="/login/main.js"></script>
+
+</body>
+</html>

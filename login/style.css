@@ -1,0 +1,596 @@
+/* login.css - 双微教研院登录页风格 */
+
+
+@font-face {
+  font-family: 'PingFang';
+  src: url('assets/resources/fonts/PFU.woff2') format('woff2');
+  font-weight: 100;
+  unicode-range: U+4E00-9FFF, U+3000-303F, U+FF00-FFEF;
+}
+@font-face {
+  font-family: 'PingFang';
+  src: url('assets/resources/fonts/PFT.woff2') format('woff2');
+  font-weight: 200;
+  unicode-range: U+4E00-9FFF, U+3000-303F, U+FF00-FFEF;
+}
+@font-face {
+  font-family: 'PingFang';
+  src: url('assets/resources/fonts/PFL.woff2') format('woff2');
+  font-weight: 300;
+  unicode-range: U+4E00-9FFF, U+3000-303F, U+FF00-FFEF;
+}
+@font-face {
+  font-family: 'PingFang';
+  src: url('assets/resources/fonts/PF.woff2') format('woff2');
+  font-weight: 400;
+  unicode-range: U+4E00-9FFF, U+3000-303F, U+FF00-FFEF;
+}
+@font-face {
+  font-family: 'PingFang';
+  src: url('assets/resources/fonts/PFM.woff2') format('woff2');
+  font-weight: 500;
+  unicode-range: U+4E00-9FFF, U+3000-303F, U+FF00-FFEF;
+}
+@font-face {
+  font-family: 'PingFang';
+  src: url('assets/resources/fonts/PFS.woff2') format('woff2');
+  font-weight: 600;
+  unicode-range: U+4E00-9FFF, U+3000-303F, U+FF00-FFEF;
+}
+
+@font-face {
+  font-family: 'SFUI';
+  src: url('assets/resources/fonts/SFUI.woff2') format('woff2-variations');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+0020-007E, U+00A0-00FF;
+}
+
+/* 页面背景 */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'PingFang', -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: linear-gradient(135deg, #fff7ec, #ffe3cc);
+  height: 100vh;
+  display: flex;
+  flex-direction: column; /* 让 footer 在下方 */
+  justify-content: center;
+  align-items: center;
+}
+
+/* 登录容器 */
+.login-container {
+  flex: 1;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 登录卡片 */
+.login-card {
+  width: 850px;
+  height: 450px;
+  background: white;
+  border-radius: 50px;
+  padding: 50px 50px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  box-sizing: border-box;
+}
+
+/* Logo */
+.login-logo img {
+  height: 40px;
+  display: block;
+  margin-top: 24px;
+  margin-bottom: 32px;
+}
+
+/* 标题 */
+.login-title {
+  font-size: 24px;
+  margin-bottom: 40px;
+  color: #202124;
+  font-weight: 500;
+}
+
+/* 表单 */
+.login-form {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: space-between;
+}
+
+/* 输入组 */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* 输入框 */
+.login-form input {
+  font-size: 16px;
+  padding: 12px 16px;
+  border: none;
+  width: calc(100%);
+  border-radius: 8px;
+  background-color: #f1f3f4;
+  outline: none;
+  box-sizing: border-box;
+  font-family: 'PingFang';
+  caret-color: #1A73E8;
+}
+
+/* 提示文字 */
+.login-hint {
+  font-size: 13px;
+  color: #6e6e73;
+  margin: 0;
+  padding-left: 4px;
+}
+
+/* 按钮 */
+.login-form button {
+  align-self: flex-end;
+  width: 120px;
+  height: 44px;
+  background-color: #ff5e00;
+  color: white;
+  font-size: 15px;
+  font-weight: 500;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.login-form button:hover {
+  background-color: #ff5e00;
+}
+
+/* 消息提示 */
+.msg {
+  color: red;
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+/* Footer 样式 */
+footer {
+  width: 100%;
+  background-color: #f8f8f8;
+  padding: 15px 40px;
+  font-size: 12px;
+  color: #666;
+  text-align: center;
+  line-height: 1.5;
+  box-sizing: border-box;
+}
+footer p {
+  margin: 4px 0;
+}
+
+/* 核心：复选框和文字对齐 */
+.form-options {
+  margin: 16px 0;          
+  display: flex;           
+  align-items: center;     
+  gap: 8px;                
+}
+
+/* 保留原生复选框样式，使用指定颜色 */
+#rememberMe {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+  accent-color: #ff5e00;    /* 使用指定的橙色 #ff5e00 */
+  border-radius: 6px;       /* 圆角 */
+  transition: transform 0.1s ease;  /* 快速过渡效果 */
+  transform-origin: center; /* 从中心缩放 */
+}
+
+/* 复选框点击时的瞬间缩放效果 */
+#rememberMe:active {
+  transform: scale(1.2);    /* 点击时瞬间放大 */
+}
+
+/* 复选框文字样式 */
+.form-options label {
+  display: flex;
+  align-items: center; 
+  cursor: pointer;
+  font-size: 14px;
+  color: #ff5e00;              /* 默认文字颜色 */
+  user-select: none;
+  transition: color 0.2s ease; /* 颜色过渡效果 */
+}
+
+/* 鼠标悬浮时文字变为红色 */
+.form-options label:hover {
+  color: #ff0000;           /* 红色文字 */
+}
+
+/* 遮罩层 */
+.popup {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.35); /* Apple 风格半透明遮罩 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  backdrop-filter: blur(6px); /* 毛玻璃效果 */
+  -webkit-backdrop-filter: blur(6px);
+  transition: opacity 0.25s ease;
+}
+
+/* 默认隐藏 */
+.popup.hidden {
+  display: none;
+}
+
+/* 弹窗内容 */
+.popup-content {
+  background: #FFFFFF;
+  padding: 28px 32px;
+  border-radius: 20px; /* Apple 圆角规范 */
+  box-shadow: 0 8px 24px rgba(0,0,0,0.12); /* 柔和阴影 */
+  text-align: center;
+  max-width: 360px;
+  width: 90%;
+  font-family: 'PingFang', 'SFUI', -apple-system, BlinkMacSystemFont, sans-serif;
+  animation: popupFadeIn 0.3s ease;
+  color: #1D1D1F; /* 主文字深灰 */
+}
+
+/* 弹窗标题 */
+.popup-content h2 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+/* 弹窗正文 */
+.popup-content p {
+  font-size: 14px;
+  color: #86868B; /* 次要文字 */
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
+
+/* 确认按钮 */
+#popup-ok {
+  padding: 10px 24px;
+  border: none;
+  border-radius: 10px; /* Apple 按钮圆角规范 */
+  background: #FF3622; /* 品牌橙红 */
+  color: white;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  box-shadow: 0 2px 6px rgba(255, 54, 34, 0.25);
+}
+
+#popup-ok:hover {
+  background: #E02E1C; /* 深一点的橙红 */
+  transform: translateY(-1px);
+  box-shadow: 0 4px 10px rgba(255, 54, 34, 0.3);
+}
+
+#popup-ok:active {
+  transform: scale(0.97);
+  box-shadow: 0 2px 6px rgba(255, 54, 34, 0.2);
+}
+
+/* 弹窗动画 */
+@keyframes popupFadeIn {
+  from { transform: scale(0.95); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+/* login.css - 双微教研院登录页风格 */
+
+
+@font-face {
+  font-family: 'PingFang';
+  src: url('assets/resources/fonts/PFU.woff2') format('woff2');
+  font-weight: 100;
+  unicode-range: U+4E00-9FFF, U+3000-303F, U+FF00-FFEF;
+}
+@font-face {
+  font-family: 'PingFang';
+  src: url('assets/resources/fonts/PFT.woff2') format('woff2');
+  font-weight: 200;
+  unicode-range: U+4E00-9FFF, U+3000-303F, U+FF00-FFEF;
+}
+@font-face {
+  font-family: 'PingFang';
+  src: url('assets/resources/fonts/PFL.woff2') format('woff2');
+  font-weight: 300;
+  unicode-range: U+4E00-9FFF, U+3000-303F, U+FF00-FFEF;
+}
+@font-face {
+  font-family: 'PingFang';
+  src: url('assets/resources/fonts/PF.woff2') format('woff2');
+  font-weight: 400;
+  unicode-range: U+4E00-9FFF, U+3000-303F, U+FF00-FFEF;
+}
+@font-face {
+  font-family: 'PingFang';
+  src: url('assets/resources/fonts/PFM.woff2') format('woff2');
+  font-weight: 500;
+  unicode-range: U+4E00-9FFF, U+3000-303F, U+FF00-FFEF;
+}
+@font-face {
+  font-family: 'PingFang';
+  src: url('assets/resources/fonts/PFS.woff2') format('woff2');
+  font-weight: 600;
+  unicode-range: U+4E00-9FFF, U+3000-303F, U+FF00-FFEF;
+}
+
+@font-face {
+  font-family: 'SFUI';
+  src: url('assets/resources/fonts/SFUI.woff2') format('woff2-variations');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+0020-007E, U+00A0-00FF;
+}
+
+/* 页面背景 */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'PingFang', -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: linear-gradient(135deg, #fff7ec, #ffe3cc);
+  height: 100vh;
+  display: flex;
+  flex-direction: column; /* 让 footer 在下方 */
+  justify-content: center;
+  align-items: center;
+}
+
+/* 登录容器 */
+.login-container {
+  flex: 1;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 登录卡片 */
+.login-card {
+  width: 850px;
+  height: 450px;
+  background: white;
+  border-radius: 50px;
+  padding: 50px 50px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  box-sizing: border-box;
+}
+
+/* Logo */
+.login-logo img {
+  height: 40px;
+  display: block;
+  margin-top: 24px;
+  margin-bottom: 32px;
+}
+
+/* 标题 */
+.login-title {
+  font-size: 24px;
+  margin-bottom: 40px;
+  color: #202124;
+  font-weight: 500;
+}
+
+/* 表单 */
+.login-form {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: space-between;
+}
+
+/* 输入组 */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* 输入框 */
+.login-form input {
+  font-size: 16px;
+  padding: 12px 16px;
+  border: none;
+  width: calc(100%);
+  border-radius: 8px;
+  background-color: #f1f3f4;
+  outline: none;
+  box-sizing: border-box;
+  font-family: 'PingFang';
+  caret-color: #1A73E8;
+}
+
+/* 提示文字 */
+.login-hint {
+  font-size: 13px;
+  color: #6e6e73;
+  margin: 0;
+  padding-left: 4px;
+}
+
+/* 按钮 */
+.login-form button {
+  align-self: flex-end;
+  width: 120px;
+  height: 44px;
+  background-color: #ff5e00;
+  color: white;
+  font-size: 15px;
+  font-weight: 500;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.login-form button:hover {
+  background-color: #ff5e00;
+}
+
+/* 消息提示 */
+.msg {
+  color: red;
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+/* Footer 样式 */
+footer {
+  width: 100%;
+  background-color: #f8f8f8;
+  padding: 15px 40px;
+  font-size: 12px;
+  color: #666;
+  text-align: center;
+  line-height: 1.5;
+  box-sizing: border-box;
+}
+footer p {
+  margin: 4px 0;
+}
+
+/* 核心：复选框和文字对齐 */
+.form-options {
+  margin: 16px 0;          
+  display: flex;           
+  align-items: center;     
+  gap: 8px;                
+}
+
+/* 保留原生复选框样式，使用指定颜色 */
+#rememberMe {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+  accent-color: #ff5e00;    /* 使用指定的橙色 #ff5e00 */
+  border-radius: 6px;       /* 圆角 */
+  transition: transform 0.1s ease;  /* 快速过渡效果 */
+  transform-origin: center; /* 从中心缩放 */
+}
+
+/* 复选框点击时的瞬间缩放效果 */
+#rememberMe:active {
+  transform: scale(1.2);    /* 点击时瞬间放大 */
+}
+
+/* 复选框文字样式 */
+.form-options label {
+  display: flex;
+  align-items: center; 
+  cursor: pointer;
+  font-size: 14px;
+  color: #ff5e00;              /* 默认文字颜色 */
+  user-select: none;
+  transition: color 0.2s ease; /* 颜色过渡效果 */
+}
+
+/* 鼠标悬浮时文字变为红色 */
+.form-options label:hover {
+  color: #ff0000;           /* 红色文字 */
+}
+
+/* 遮罩层 */
+.popup {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.35); /* Apple 风格半透明遮罩 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  backdrop-filter: blur(6px); /* 毛玻璃效果 */
+  -webkit-backdrop-filter: blur(6px);
+  transition: opacity 0.25s ease;
+}
+
+/* 默认隐藏 */
+.popup.hidden {
+  display: none;
+}
+
+/* 弹窗内容 */
+.popup-content {
+  background: #FFFFFF;
+  padding: 28px 32px;
+  border-radius: 20px; /* Apple 圆角规范 */
+  box-shadow: 0 8px 24px rgba(0,0,0,0.12); /* 柔和阴影 */
+  text-align: center;
+  max-width: 360px;
+  width: 90%;
+  font-family: 'PingFang', 'SFUI', -apple-system, BlinkMacSystemFont, sans-serif;
+  animation: popupFadeIn 0.3s ease;
+  color: #1D1D1F; /* 主文字深灰 */
+}
+
+/* 弹窗标题 */
+.popup-content h2 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+/* 弹窗正文 */
+.popup-content p {
+  font-size: 14px;
+  color: #86868B; /* 次要文字 */
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
+
+/* 确认按钮 */
+#popup-ok {
+  padding: 10px 24px;
+  border: none;
+  border-radius: 10px; /* Apple 按钮圆角规范 */
+  background: #FF3622; /* 品牌橙红 */
+  color: white;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  box-shadow: 0 2px 6px rgba(255, 54, 34, 0.25);
+}
+
+#popup-ok:hover {
+  background: #E02E1C; /* 深一点的橙红 */
+  transform: translateY(-1px);
+  box-shadow: 0 4px 10px rgba(255, 54, 34, 0.3);
+}
+
+#popup-ok:active {
+  transform: scale(0.97);
+  box-shadow: 0 2px 6px rgba(255, 54, 34, 0.2);
+}
+
+/* 弹窗动画 */
+@keyframes popupFadeIn {
+  from { transform: scale(0.95); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
